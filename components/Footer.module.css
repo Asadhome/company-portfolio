@@ -1,0 +1,17 @@
+.footer {
+  border-top: 1px solid var(--line);
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  justify-content: space-between;
+  padding-block: 24px;
+}
+
+.line {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}

@@ -1,0 +1,121 @@
+/* Design tokens — Terminal concept.
+   Single committed dark look (IDE/terminal aesthetic), so colors are set
+   explicitly rather than following the viewer's OS theme. */
+:root {
+  --bg: #0b0c09;
+  --surface: #23261d;
+  --fg: #eef1e6;
+  --muted: #9aa28c;
+  --accent: #ff9f45;
+  --accent-2: #6fd3c7;
+  --line: #3a3e2f;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-inline: 24px;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-inline: 18px;
+  }
+}
+
+.mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+.section {
+  position: relative;
+  overflow: hidden;
+  padding-block: 72px;
+  border-top: 1px solid var(--line);
+}
+
+/* Section content sits above the ambient SectionBackground (z-index: 0). */
+.section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.section:first-of-type {
+  border-top: none;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font: 500 12px/1 var(--font-mono), monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.section-label .idx {
+  color: var(--accent);
+}
+
+.section-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

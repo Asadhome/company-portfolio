@@ -1,0 +1,50 @@
+.codebg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  gap: 34px;
+  padding-inline: 22px;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.col {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  white-space: pre;
+  font: 12px/1.75 var(--font-mono), monospace;
+  color: var(--fg);
+  will-change: transform;
+  animation-name: codescroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.col:nth-child(3),
+.col:nth-child(4) {
+  display: none;
+}
+
+@media (min-width: 641px) {
+  .col:nth-child(3),
+  .col:nth-child(4) {
+    display: block;
+  }
+}
+
+@keyframes codescroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .col {
+    animation: none;
+  }
+}
