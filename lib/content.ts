@@ -1,18 +1,18 @@
 // Single source of truth for the site's copy. Edit this file to update the
 // site — every section pulls from here instead of hardcoding text inline.
 //
-// "createpixel" is an agency name/brand built from the real work history in
+// "Creatpixl" is an agency name/brand built from the real work history in
 // the underlying resumes (web development + email marketing/CRM
 // integration). Swap `company.email` and any other placeholder before this
 // goes live — see README.md.
 
 export const company = {
-  name: "createpixel",
-  shortName: "createpixel",
+  name: "Creatpixl",
+  shortName: "creatpixl",
   tagline: "Web Development, Design & Marketing Automation",
   location: "Lahore, Pakistan",
   // Placeholder — swap for a real inbox once a domain is registered.
-  email: "hello@createpixel.co",
+  email: "createpixl55@gmail.com",
   yearsExperience: 8,
   summary:
     "A full-service digital shop building e-commerce and content platforms on Shopify, WordPress, and React/Next.js, and the email marketing and CRM integrations — Klaviyo, HubSpot, Braze, Salesforce Marketing Cloud — that turn that traffic into lifecycle revenue.",
@@ -24,11 +24,11 @@ export const company = {
 };
 
 export const navItems = [
-  { href: "#home", label: "~/home" },
-  { href: "#services", label: "~/services" },
-  { href: "#stack", label: "~/stack" },
-  { href: "#work", label: "~/work" },
-  { href: "#contact", label: "~/contact" },
+  { href: "#home", label: "~/Home" },
+  { href: "#services", label: "~/Services" },
+  { href: "#stack", label: "~/Stack" },
+  { href: "#work", label: "~/Work" },
+  { href: "#contact", label: "~/Contact" },
 ];
 
 export type Service = {
@@ -45,16 +45,10 @@ export const services: Service[] = [
     stack: ["Shopify", "WordPress", "React", "Next.js"],
   },
   {
-    title: "Web Design",
+    title: "Web & Logo Design",
     description:
-      "Site layouts and UI systems — wireframes, design systems, and polished interfaces built in Figma before a line of code ships.",
-    stack: ["UI/UX Design", "Figma", "Design Systems", "Wireframing"],
-  },
-  {
-    title: "Logo Design",
-    description:
-      "Logo and visual identity design — marks, typography, and brand guidelines that carry consistently across the site and beyond it.",
-    stack: ["Logo Design", "Brand Identity", "Typography", "Figma"],
+      "Site layouts, UI systems, and brand identity — wireframes, design systems, logos, typography, and brand guidelines built in Figma that carry consistently across the site and beyond it.",
+    stack: ["UI/UX Design", "Figma", "Design Systems", "Logo Design", "Brand Identity"],
   },
   {
     title: "Email Marketing & Automation",
@@ -74,6 +68,12 @@ export const services: Service[] = [
       "Automated workflows that connect your apps, CRM, and data pipelines — lead routing, scheduled reports, AI-assisted triage — built primarily on n8n.",
     stack: ["n8n", "Workflow Automation", "APIs", "Scripting"],
   },
+  {
+    title: "Social Media Marketing",
+    description:
+      "Content calendars, paid campaigns, and community management that grow your audience and drive traffic back to your site across Instagram, Facebook, LinkedIn, and TikTok.",
+    stack: ["Instagram", "Facebook", "LinkedIn", "Paid Ads", "Content Strategy"],
+  },
 ];
 
 export type SkillGroup = {
@@ -83,11 +83,11 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
   {
-    label: "Frontend",
+    label: "~/Frontend",
     skills: ["React", "Next.js", "JavaScript", "TypeScript", "HTML5", "CSS3", "Liquid"],
   },
   {
-    label: "Backend",
+    label: "~/Backend",
     skills: ["Node.js", "PHP", "GraphQL", "REST APIs", "Express"],
   },
   {
@@ -99,11 +99,11 @@ export const skillGroups: SkillGroup[] = [
     skills: ["Shopify", "Shopify CLI", "WordPress", "WooCommerce"],
   },
   {
-    label: "Data",
+    label: "~/Data",
     skills: ["MySQL", "MongoDB", "Firebase"],
   },
   {
-    label: "Tooling",
+    label: "~/Tooling",
     skills: ["Git", "GitHub", "Bitbucket", "Postman", "VS Code", "Vercel", "Figma", "n8n"],
   },
 ];

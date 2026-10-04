@@ -1,19 +1,23 @@
-/* Design tokens — Terminal concept.
+/* Design tokens — Terminal concept in Creatpixl black + cyan.
    Single committed dark look (IDE/terminal aesthetic), so colors are set
    explicitly rather than following the viewer's OS theme. */
 :root {
-  --bg: #0b0c09;
-  --surface: #23261d;
-  --fg: #eef1e6;
-  --muted: #9aa28c;
-  --accent: #ff9f45;
-  --accent-2: #6fd3c7;
-  --line: #3a3e2f;
+  --bg: #050607;
+  --surface: #111416;
+  --fg: #f2f5f6;
+  --muted: #8b969c;
+  --accent: #0cc0df;
+  --accent-2: #2bb3cc;
+  --line: #272d30;
   color-scheme: dark;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 90px;
 }
 
 html,

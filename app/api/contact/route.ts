@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 import { Resend } from "resend";
 import { company } from "@/lib/content";
 
@@ -11,7 +12,11 @@ type ContactPayload = {
   message?: string;
 };
 
-// Sends the contact form through Resend (https://resend.com) — the email
+// Sends the contact form through Gmail SMTP (preferred, see GMAIL_* below) or
+// Resend. The Resend notes follow; Gmail needs GMAIL_USER and a 16-character
+// Google App Password in GMAIL_APP_PASSWORD.
+//
+// Resend (https://resend.com) — the email
 // provider Vercel's own Next.js examples use, and the fastest path to a
 // working "from Vercel" contact form. To turn this on:
 //
@@ -50,12 +55,44 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Please provide a valid email address." }, { status: 400 });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO_EMAIL || company.email;
-  const from = process.env.CONTACT_FROM_EMAIL || "createpixel <onboarding@resend.dev>";
+  const subject = `New inquiry from ${name}`;
+  const text = `${message}
+
+—
+${name} <${email}>`;
+
+  // Option 1: Gmail SMTP (GMAIL_USER + GMAIL_APP_PASSWORD).
+  const gmailUser = process.env.GMAIL_USER;
+  const gmailPass = process.env.GMAIL_APP_PASSWORD?.replace(/\s+/g, "");
+  if (gmailUser && gmailPass) {
+    try {
+      const transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: true,
+        auth: { user: gmailUser, pass: gmailPass },
+      });
+      await transporter.sendMail({
+        from: `"Creatpixl Website" <${gmailUser}>`,
+        to,
+        replyTo: `"${name.replace(/"/g, "")}" <${email}>`,
+        subject,
+        text,
+      });
+      return NextResponse.json({ ok: true, sent: true });
+    } catch (err) {
+      console.error("[contact] Gmail SMTP error", err);
+      return NextResponse.json({ error: "Something went wrong sending your message." }, { status: 500 });
+    }
+  }
+
+  // Option 2: Resend.
+  const apiKey = process.env.RESEND_API_KEY;
+  const from = process.env.CONTACT_FROM_EMAIL || "Creatpixl Website <onboarding@resend.dev>";
 
   if (!apiKey) {
-    console.log("[contact] RESEND_API_KEY not set — logging instead of sending", {
+    console.log("[contact] No GMAIL_APP_PASSWORD or RESEND_API_KEY set — logging instead of sending", {
       name,
       email,
       message,

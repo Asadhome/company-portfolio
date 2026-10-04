@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { company, navItems } from "@/lib/content";
+import ScrollLink from "./ScrollLink";
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -13,14 +15,15 @@ export default function Header() {
         </span>
       </div>
       <div className={styles.navrow}>
-        <a href="#home" className={styles.logo}>
-          &lt;<b>{company.name.charAt(0).toUpperCase()}</b>/&gt; {company.name}
-        </a>
+        <ScrollLink href="#home" className={styles.logo}>
+          <Image src="/logo-mark.png" alt="" width={266} height={178} priority className={styles.logoImg} />
+          <span className={styles.logoText}>{company.name}</span>
+        </ScrollLink>
         <nav className={styles.nav} aria-label="Primary">
           {navItems.map((item, i) => (
-            <a key={item.href} href={item.href} className={i === 0 ? styles.active : undefined}>
+            <ScrollLink key={item.href} href={item.href} className={i === 0 ? styles.active : undefined}>
               {item.label}
-            </a>
+            </ScrollLink>
           ))}
         </nav>
       </div>

@@ -15,3 +15,20 @@
   color: var(--muted);
   margin: 0;
 }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 28px;
+  width: auto;
+}
+
+.brandText {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fg);
+}

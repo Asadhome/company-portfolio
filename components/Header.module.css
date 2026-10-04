@@ -49,16 +49,19 @@
   gap: 24px;
   max-width: 1040px;
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 10px 24px;
 }
 
 @media (max-width: 640px) {
   .navrow {
-    padding: 14px 18px;
+    padding: 10px 18px;
   }
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font: 600 16px/1 var(--font-mono), monospace;
   letter-spacing: -0.01em;
   text-decoration: none;
@@ -111,4 +114,16 @@
   bottom: -1px;
   height: 2px;
   background: var(--accent);
+}
+
+.logoImg {
+  display: block;
+  height: 30px;
+  width: auto;
+}
+
+.logoText {
+  font: 600 18px/1 var(--font-mono), monospace;
+  letter-spacing: -0.01em;
+  color: var(--fg);
 }

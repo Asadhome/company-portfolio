@@ -12,8 +12,8 @@
   background: linear-gradient(
     to bottom,
     var(--bg) 0%,
-    rgba(11, 12, 9, 0.45) 14%,
-    rgba(11, 12, 9, 0.45) 86%,
+    rgba(5, 6, 7, 0.45) 14%,
+    rgba(5, 6, 7, 0.45) 86%,
     var(--bg) 100%
   );
 }

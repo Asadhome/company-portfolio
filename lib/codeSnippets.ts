@@ -7,7 +7,7 @@ export const heroSnippets = [
   const [theme, setTheme] = useState('dark');
   return (
     <main className="hero">
-      <h1>createpixel</h1>
+      <h1>creatpixl</h1>
     </main>
   );
 }
@@ -233,7 +233,7 @@ export const contactSnippets = [
   const { name, email, message } = await request.json();
 
   await resend.emails.send({
-    from: 'createpixel <hello@createpixel.co>',
+    from: 'creatpixl <createpixl55@gmail.com>',
     to: COMPANY_EMAIL,
     subject: \`New inquiry from \${name}\`,
     text: message,
@@ -254,7 +254,7 @@ if (!res.ok) throw new Error('send failed');`,
 
 // reply within 1–2 business days
 const SLA_HOURS = 48;`,
-  `$ curl -X POST https://createpixel.co/api/contact \\
+  `$ curl -X POST https://creatpixl.com/api/contact \\
   -H "Content-Type: application/json" \\
   -d '{"name":"Jane","email":"jane@co.com"}'
 

@@ -1,4 +1,4 @@
-# createpixel
+# Creatpixl
 
 A company portfolio/marketing site built with Next.js (App Router) + TypeScript for fast load times, deployed on Vercel.
 
@@ -16,7 +16,7 @@ Update that file and every section (Hero, Services, Stack, Work, Contact) picks 
 
 A couple of things in this build are placeholders and should be swapped for real values:
 
-- **Contact email** — `company.email` in `lib/content.ts` (currently `hello@createpixel.co`, a placeholder domain that isn't registered).
+- **Contact email** — `company.email` in `lib/content.ts` (currently `createpixl55@gmail.com`; the contact form delivers there via Resend).
 - **Case studies** — the `projects` array in `lib/content.ts` lists real past client work (Konmari, PlayMonster, Fashionphile, etc.) pulled from the team's résumés. Confirm you're clear to publicly reference each client as a case study before this goes live — some client relationships may be confidential or require permission to name publicly.
 - **`/og-image.png`** in `public/` — a screenshot-based social-preview image. Regenerate it any time the hero content changes (a full-page screenshot of the live site works).
 

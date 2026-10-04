@@ -19,8 +19,8 @@
   background: linear-gradient(
     to bottom,
     var(--bg) 0%,
-    rgba(11, 12, 9, 0.55) 20%,
-    rgba(11, 12, 9, 0.55) 80%,
+    rgba(5, 6, 7, 0.55) 20%,
+    rgba(5, 6, 7, 0.55) 80%,
     var(--bg) 100%
   );
 }
@@ -30,8 +30,8 @@
     to right,
     var(--bg) 0%,
     var(--bg) 30%,
-    rgba(11, 12, 9, 0.35) 60%,
-    rgba(11, 12, 9, 0) 100%
+    rgba(5, 6, 7, 0.35) 60%,
+    rgba(5, 6, 7, 0) 100%
   );
 }
 
@@ -173,4 +173,20 @@
   .cursor {
     animation: none;
   }
+}
+
+.mail {
+  font-size: 13px;
+  margin: 24px 0 0;
+}
+
+.mail a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.mail a:hover {
+  border-bottom-color: var(--accent);
 }

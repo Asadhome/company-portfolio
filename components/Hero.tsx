@@ -1,6 +1,7 @@
 import { company } from "@/lib/content";
 import { heroSnippets } from "@/lib/codeSnippets";
 import CodeBackground from "./CodeBackground";
+import ScrollLink from "./ScrollLink";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -29,13 +30,17 @@ export default function Hero() {
           ))}
         </ul>
         <div className={styles.ctas}>
-          <a href="#work" className={`mono ${styles.btnPrimary}`}>
+          <ScrollLink href="#work" className={`mono ${styles.btnPrimary}`}>
             See our work
-          </a>
-          <a href="#contact" className={`mono ${styles.btnGhost}`}>
+          </ScrollLink>
+          <ScrollLink href="#contact" className={`mono ${styles.btnGhost}`}>
             Start a project
-          </a>
+          </ScrollLink>
         </div>
+        <p className={`mono ${styles.mail}`}>
+          <span className={styles.promptMuted}>email:</span>
+          <a href={`mailto:${company.email}`}>{company.email}</a>
+        </p>
       </div>
     </section>
   );
